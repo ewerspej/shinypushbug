@@ -2,6 +2,7 @@
 using Android.App;
 #endif
 
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Shiny;
 using Shiny.Push;
@@ -36,6 +37,8 @@ public static class MauiProgram
 
     public static MauiAppBuilder AddFirebase(this MauiAppBuilder builder)
     {
+        builder.Configuration.AddJsonPlatformBundle();
+
         builder.Services.AddPushFirebaseMessaging<ThePushDelegate>(
             new FirebaseConfiguration(
                 false,
