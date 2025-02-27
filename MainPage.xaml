@@ -4,10 +4,13 @@
   xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
   xmlns:shinypushbug="clr-namespace:shinypushbug"
-  x:DataType="shinypushbug:MainViewModel">
+  x:DataType="shinypushbug:MainViewModel"
+  Shell.NavBarIsVisible="False">
 
-  <VerticalStackLayout>
-    <Label Text="{Binding FcmToken}" />
+  <VerticalStackLayout Spacing="5">
+    <Label
+      HeightRequest="32"
+      Text="{Binding FcmToken}" />
 
     <Button
       Command="{Binding ToggleRegistrationCommand}"

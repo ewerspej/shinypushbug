@@ -27,9 +27,11 @@ public partial class MainViewModel : ObservableObject
         {
             if (_pushManager.RegistrationToken is not null)
             {
-                await _pushManager.UnRegister();
                 FcmToken = string.Empty;
                 _preferences.Remove("token");
+
+                await _pushManager.UnRegister();
+
                 return;
             }
 
