@@ -14,6 +14,7 @@
 		<ApplicationTitle>shinypushbug</ApplicationTitle>
 
 		<!-- App Identifier -->
+    <!-- TODO: replace com.companyname.shinypushbug with valid bundle ID for push testing -->
 		<ApplicationId>com.companyname.shinypushbug</ApplicationId>
 
 		<!-- Versions -->
@@ -45,12 +46,14 @@
 	</ItemGroup>
 
   <ItemGroup Condition="$(TargetFramework.Contains('-ios'))">
+    <!-- TODO: replace com.companyname.shinypushbug with valid bundle ID for push testing -->
     <CustomEntitlements Include="keychain-access-groups" Type="StringArray" Value="%24(AppIdentifierPrefix)com.companyname.shinypushbug" />
     <CustomEntitlements Include="aps-environment" Type="string" Value="development" Condition="'$(Configuration)' == 'Debug'" />
     <CustomEntitlements Include="aps-environment" Type="string" Value="production" Condition="'$(Configuration)' == 'Release'" />
   </ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.20" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.20" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
